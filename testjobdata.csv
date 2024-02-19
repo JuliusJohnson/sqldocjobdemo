@@ -1,0 +1,14 @@
+JobName,StepName,StepIndex,Category,Created,OnSuccess,OnFailure,Type
+Test1,Do thing 1,1,Practice,2/16/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Test1,Do thing 2,2,Practice,2/16/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Test1,Do thing 3,3,Practice,2/16/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Test1,Do thing 4,4,Practice,2/11/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Test1,Do thing 5,5,Practice,2/11/2024,Quit Job With Success,Quit Job With Failure,T-SQL
+Demo1,Do thing 1,1,Demo,1/17/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Demo1,Do thing 2,2,Demo,1/17/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Demo1,Do thing 3,3,Demo,1/17/2024,Quit Job With Success,Quit Job With Failure,T-SQL
+Practice,Do thing 1,1,Practice,1/2/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Practice,Do thing 2,2,Practice,1/2/2024,Quit Job With Success,Quit Job With Failure,T-SQL
+Test2,Do thing 1,1,Practice,1/2/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Test2,Do thing 2,2,Practice,1/2/2024,Go To Next Step,Quit Job With Failure,T-SQL
+Test2,Do thing 3,3,Practice,1/2/2024,Quit Job With Success,Quit Job With Failure,T-SQL
