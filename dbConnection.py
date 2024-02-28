@@ -4,7 +4,7 @@ DATABASE= "Test"
 
 
 def getJobs(jobName):
-    conn = pyodbc.connect(f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=Yes;Encrypt=No;APP=SQL Server Job Report;')
+    conn = pyodbc.connect(f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=Yes;Encrypt=Yes;TrustServerCertificate=YES;APP=SQL Server Job Report;')
     #conn = pyodbc.connect('Driver={ODBC Driver 18 for SQL Server};Server=test;UID=user;PWD=password;Encrypt=no;')
 
     cursor = conn.cursor()
