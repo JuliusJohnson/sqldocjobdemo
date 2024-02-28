@@ -14,7 +14,7 @@
 <body> 
     <div id="mySidenav" class="sidenav">
         {%for i in range(0, len)%} 
-        <a href="#Step{{jobSteps[i]['StepIndex']}}">Step {{jobSteps[i]['StepIndex']}}: {{jobSteps[i]['StepName']}} </a>
+        <a href="#Step{{jobSteps[i]['step_id']}}">Step {{jobSteps[i]['step_id']}}: {{jobSteps[i]['step_name']}} </a>
         {%endfor%} 
     </div>
 <main>
@@ -28,27 +28,27 @@
 <div class="table" id="step{i+1}">
     <table class="table table-hover">
         <tr>
-            <strong>Step {{jobSteps[i]['StepIndex']}}</strong>
+            <strong>Step {{jobSteps[i]['step_id']}}</strong>
 
             <tbody>
                 <tr scope="row">
-                    <th><strong>{{jobSteps[i]['StepName']}}</strong> </th>
+                    <th><strong>{{jobSteps[i]['step_name']}}</strong> </th>
                 </tr>
                 <tr>
                     <th scope="row">Type</th>
-                    <td>{{jobSteps[i]['Type']}}</td>
+                    <td>{{jobSteps[i]['subsystem']}}</td>
                 </tr>
                 <tr>
                     <th scope="row">Command</th>
-                    <td>Mark</td>
+                    <td>{{jobSteps[i]['command']}}</td>
                 </tr>
                 <tr>
                     <th scope="row">On Success</th>
-                    <td>{{jobSteps[i]['OnSuccess']}}</td>
+                    <td>{{jobSteps[i]['On_Success']}}</td>
                 </tr>
                 <tr>
                     <th scope="row">On Failure</th>
-                    <td colspan="2">{{jobSteps[i]['OnFailure']}}</td>
+                    <td colspan="2">{{jobSteps[i]['On_Failure']}}</td>
                 </tr>
             </tbody>
     </table>
