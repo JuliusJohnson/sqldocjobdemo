@@ -11,7 +11,7 @@ def getJobs(jobName):
     ### SQL QUERY START ###
     jobStepsSql= f'''  DECLARE @jobname varchar(100) 
 
-  SET @jobname = {jobName}
+  --SET @jobname = {jobName}
 
   IF @jobname = ''
 	BEGIN
@@ -54,7 +54,7 @@ def getJobs(jobName):
     FROM msdb.dbo.sysjobs AS sj
         INNER JOIN msdb.dbo.sysjobsteps sjs
             ON sj.job_id = sjs.job_id
-    WHERE sj.name LIKE @JobName'''
+    WHERE REPLACE(sj.name,' ','_') LIKE ?'''
     ### SQL QUERY END ###
-    cursor.execute('EXEC Test.dbo.proc_JobSteps @jobname = ?', jobName)
+    cursor.execute(jobStepsSql, jobName)
     return cursor
