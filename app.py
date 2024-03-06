@@ -29,7 +29,7 @@ def structureData():
         
     return jobs
 
-pprint(structureData()['Long Job'][0]['step_name'])
+# pprint(type(structureData()))
 
 # defining home page 
 @app.route(f'/') 
@@ -37,7 +37,7 @@ def homepage():
   
 # returning index.html and list 
 # and length of list to html page 
-    return render_template("index.html", len = len(structureData()['Long Job']), jobSteps = structureData()['Long Job']) 
+    return render_template("index.html", len = len(structureData()), jobSteps = [structureData()]) 
 
 # @app.route('/<string:title>')
 # def post(number):

@@ -13,47 +13,41 @@
 </head> 
 <body> 
     <div id="mySidenav" class="sidenav">
-        {%for i in range(0, len)%} 
-        <a href="#Step{{jobSteps[i]['step_id']}}">Step {{jobSteps[i]['step_id']}}: {{jobSteps[i]['step_name']}} </a>
-        {%endfor%} 
+        
     </div>
 <main>
     <div class="main">
-        <h2>Test 1</h2>
+        <h2>SQL Server Job Documentation</h2>
         <p><em>Created: February 16, 2024</em></p>
 
 <!-- For loop logic of jinja template -->
-{%for i in range(0, len)%} 
-  
-<div class="table" id="step{i+1}">
-    <table class="table table-hover">
-        <tr>
-            <strong>Step {{jobSteps[i]['step_id']}}</strong>
 
-            <tbody>
-                <tr scope="row">
-                    <th><strong>{{jobSteps[i]['step_name']}}</strong> </th>
-                </tr>
-                <tr>
-                    <th scope="row">Type</th>
-                    <td>{{jobSteps[i]['subsystem']}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Command</th>
-                    <td>{{jobSteps[i]['command']}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">On Success</th>
-                    <td>{{jobSteps[i]['On_Success']}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">On Failure</th>
-                    <td colspan="2">{{jobSteps[i]['On_Failure']}}</td>
-                </tr>
-            </tbody>
-    </table>
+  
+<div class="header-img">
 </div>
-{%endfor%} 
+<div class="intro">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Vitae auctor eu augue ut lectus. Ut sem nulla pharetra diam sit amet.
+        Venenatis cras sed felis eget velit aliquet. Aenean et tortor at risus viverra adipiscing at. Diam
+        phasellus vestibulum lorem sed. Lorem mollis aliquam ut porttitor leo. </p>
+</diV>
+<div class="main-overview">
+    {% for i in jobSteps %} 
+        {% for key, value in i.items() %}
+    <div class="overviewcard ">
+        <div class="overviewcard__icon ">
+            <div class="contact">
+                <div class="contact-text"><strong><a href="/Overview/">{{key}}</a></strong></div>
+                <span class="contact-number">Aenean et tortor at risus viverra adipiscing at. Diam
+                    phasellus vestibulum lorem sed. Lorem mollis aliquam ut porttitor leo.</span>
+            </div>
+        </div>
+    </div>
+    {%endfor%} 
+    {%endfor%} 
+
+</div>
+
   
 
   
