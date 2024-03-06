@@ -13,23 +13,23 @@ def structureData():
     columns = []
     jobs = {}
 
-    for job in getJobStepData(''):
+    for job in getJobStepData('%'):
         keys.append(job[0])
 
-    for column in getJobStepData('').description:
+    for column in getJobStepData('%').description:
         columns.append(column[0])
 
     keys = list(set((keys))) #makes unique list
 
     for key in keys: #for each key in the keys list
         jobs[key] = [] #create a dictionary entry with an empty list
-        for i in getJobStepData('').fetchall(): #for each "row" from the query while looping through keys
+        for i in getJobStepData('%').fetchall(): #for each "row" from the query while looping through keys
             if i[0] == key: #if the jobname is equal to the key name
                 jobs[key].append(dict(zip(columns,i))) #append that row to the corresponding key name. Help: https://stackoverflow.com/questions/16519385/output-pyodbc-cursor-results-as-python-dictionary
         
     return jobs
 
-# pprint(type(structureData()))
+# pprint(getJobStepData('%').fetchall())
 
 # defining home page 
 @app.route(f'/') 
@@ -39,19 +39,9 @@ def homepage():
 # and length of list to html page 
     return render_template("index.html", len = len(structureData()), jobSteps = [structureData()]) 
 
-# @app.route('/<string:title>')
-# def post(number):
-#     if number < 1 or number > len(select_jobsteps('t')):
-#         abort(404, "This Post doesn't exist")   
-
-#     data = select_jobsteps('t')[number-1]
-    
-#     return render_template_string('''
-# {{ item[0]['JobName'] }}<br/>
-# {{ item.content }}<br/>
-# {{ item.date }}<br/>
-# {{ item.author }}<br/>''', item=select_jobsteps('t')) 
-# if __name__ == '__main__': 
+@app.route('/jobs/<jobname>')
+def jobSteps(jobname):
+    return render_template("jobs.html", len = len(structureData()[jobname]), jobSteps = structureData()[jobname])
   
 # running app 
 app.run(use_reloader = True, debug = True) 
