@@ -20,7 +20,7 @@ def getJobs(jobName):
     ELSE
         SET @jobname = @jobname;
     -- Insert statements for procedure here
-    SELECT sj.name AS JobName,
+    SELECT REPLACE(sj.name,' ','_') AS JobName,
            sj.enabled,
            sj.start_step_id,
            sjs.step_id,
