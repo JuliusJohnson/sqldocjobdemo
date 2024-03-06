@@ -60,7 +60,66 @@ main {
     }
 }
 
-.table{
+.table {
     margin-top: 5%;
     margin-bottom: 5%;
+}
+
+/* homepage */
+.header-img {
+    height: 100px;
+    background-image: url('https://images.unsplash.com/photo-1527769929977-c341ee9f2033?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+}
+
+.main-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    /* Where the magic happens https://gist.github.com/trooperandz/39020a1abc9e94bd874e58d753db75f4 */
+    grid-auto-rows: 150px;
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.overviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(126, 126, 126, 0.8);
+}
+
+.overviewcard__icon {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact{
+    margin-left: auto;
+}
+.contact .contact-number {
+    opacity: 0;
+    margin: auto;
+    transition-duration: .3s;
+}
+
+.contact-text{
+    font-size: 1em;
+}
+
+.contact:hover .contact-text {
+    opacity: 80%;
+    transition-duration: .3s;
+}
+
+.contact:hover .contact-number {
+    opacity: 1;
+    transition-duration: .3s;
+}
+
+.contact-number,
+.contact-text {
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
 }
