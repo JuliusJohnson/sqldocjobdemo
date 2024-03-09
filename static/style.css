@@ -100,7 +100,7 @@ main {
 }
 
 .contact .contact-number {
-    opacity: 0;
+    opacity: 60%;
     margin: auto;
     transition-duration: .3s;
 }
