@@ -14,7 +14,7 @@
 
 <body>
     <div id="mySidenav" class="sidenav">
-        <a class= ".home_icon" href = '/'><div class="home_icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48"
+        <a class= ".home_text" href = '/'><div class="home_icon"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48"
                 fill="rgba(255,255,255,1)">
                 <path
                     d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z">
@@ -24,7 +24,7 @@
     <main>
         <div class="main">
             <h2>SQL Server Job Documentation</h2>
-            <p><em>Created: February 16, 2024</em></p>
+            <p><em>{{getdate}}</em></p>
 
             <!-- For loop logic of jinja template -->
 
@@ -44,8 +44,7 @@
                     <div class="overviewcard__icon ">
                         <div class="contact">
                             <div class="contact-text"><strong><a href="/jobs/{{key}}">{{key}}</a></strong></div>
-                            <span class="contact-number">Aenean et tortor at risus viverra adipiscing at. Diam
-                                phasellus vestibulum lorem sed. Lorem mollis aliquam ut porttitor leo.</span>
+                            <span class="contact-number">{{value[0]['description']}}</span>
                         </div>
                     </div>
                 </div>

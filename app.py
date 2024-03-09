@@ -1,8 +1,9 @@
-import csv,dbConnection
+import csv,dbConnection, datetime
 from flask import Flask, render_template, render_template_string, abort
 from pprint import pprint
 # declaring app name 
 app = Flask(__name__) 
+today = datetime.datetime.now().strftime("%B %d, %Y %I:%M %p")
 
 def getJobStepData(jobName):
     getJobStepData = dbConnection.getJobs(jobName)
@@ -41,7 +42,7 @@ def homepage():
 
 @app.route('/jobs/<jobname>')
 def jobSteps(jobname):
-    return render_template("jobs.html", len = len(structureData()[jobname]), jobSteps = structureData()[jobname])
+    return render_template("jobs.html", len = len(structureData()[jobname]), jobSteps = structureData()[jobname], getdate = today)
   
 # running app 
 app.run(use_reloader = True, debug = True) 
