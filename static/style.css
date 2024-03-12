@@ -170,10 +170,12 @@ main {
 
 .overviewcard {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     padding: 20px;
     background-color: rgba(126, 126, 126, 0.8);
+    overflow: hidden;
+
 }
 
 .overviewcard__icon {
@@ -210,5 +212,11 @@ main {
     text-align: center;
     vertical-align: center;
     margin: auto;
+    text-overflow: ellipsis;
+    
+}
+
+.contact-number {
+
 }
 
