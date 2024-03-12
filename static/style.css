@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    margin-left: 150px;
+    margin-left: 200px;
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
@@ -13,19 +13,21 @@ main {
     margin-right: 5vw;
 }
 
+
+
 .sidenav {
     height: 100%;
-    width: 150px;
+    width: 200px;
     position: fixed;
     z-index: 0;
     top: 0;
     left: 0;
     background-color: #111;
     background-image: url(https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     transition: 0.5s;
     padding-top: 40px;
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -50,6 +52,90 @@ main {
     font-size: 36px;
     margin-left: 50px;
 }
+
+.home_icon a {
+    text-align: center;
+    margin: auto;
+    color: white;
+    display: block;
+    padding: 0;
+}
+
+/* .home_text .sidenav a {
+    text-align: center;
+    margin: auto;
+    font-size: 1.0em;
+    color: white;
+    display: block;
+    padding-left: 25px;
+}  */
+
+.job-links {
+    /* --mask: linear-gradient(to right,
+            rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 40%,
+            rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 0) 100% 50% / 100% 100% repeat-x; */
+    border: 1px #d8d8d8 dashed;
+    /* font: 2em/1.0em Arial; */
+    /* -webkit-mask: var(--mask);
+    mask: var(--mask); */
+    margin-left: -20px;
+}
+
+.job-links2 {
+    --mask: linear-gradient(to right,
+            rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 40%,
+            rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 0) 100% 50% / 100% 100% repeat-x;
+    /* font: 2em/1.0em Arial; */
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    margin-left: 0px;
+}
+/* ToolTip for nav bar */
+
+.job-tooltip {
+    position: relative;
+    /* display: inline-block; */
+    border-bottom: 1px dotted black;
+}
+
+.job-tooltiptext {
+    visibility: hidden;
+    /* width: 120px; */
+    background-color: rgb(44, 44, 44);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    height: 1em;
+    font-size: 10px;
+    position: relative;
+    margin-left: 4em;
+}
+
+.job-tooltiptext:hover::after {
+    background-color: #333;
+    border-radius: 10px;
+    color: #b254ff;
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    text-align: center;
+    margin-left: 100px;
+    z-index: 999;
+    overflow: visible;
+
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1000;
+    top: -5px;
+    /* right: 105%;  */
+}
+
+.job-tooltip:hover .job-tooltiptext {
+    visibility: visible;
+}
+
 
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -126,29 +212,3 @@ main {
     margin: auto;
 }
 
-.home_icon a {
-    text-align: center;
-    margin: auto;
-    color: white;
-    display: block;
-    padding: 0;
-}
-
-.home_text a {
-    text-align: center;
-    margin: auto;
-    font-size: 1.0em;
-    color: white;
-    display: block;
-}
-
-.job-links {
-    --mask: linear-gradient(to right,
-            rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 40%,
-            rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 0) 100% 50% / 100% 100% repeat-x;
-    border: 1px #d8d8d8 dashed  ;
-    font: 2em/1.6em Arial;
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-    margin-left: -20px;
-}
