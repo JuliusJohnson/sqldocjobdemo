@@ -46,16 +46,16 @@ SELECT Replace(sj.NAME, ' ', '_')  AS JobName,
        last_run_date,
        last_run_duration,
        last_run_outcome,
-       'last run literal' = Dateadd(millisecond, sjs.last_run_time,
+       'lastrunliteral' = Dateadd(millisecond, sjs.last_run_time,
                             CONVERT(DATETIME, Cast(
                                                  NULLIF(sjs.last_run_date, 0) AS
                                                  VARCHAR(
                                                  10)))),
-       'last run day' = Datename(dw, Dateadd(millisecond, sjs.last_run_time,
+       'lastrunday' = Datename(dw, Dateadd(millisecond, sjs.last_run_time,
                                                       CONVERT(DATETIME, Cast(
                                      NULLIF(sjs.last_run_date, 0) AS
                                      VARCHAR(10))))),
-       'last run date' = CONVERT(CHAR, Dateadd(millisecond, sjs.last_run_time,
+       'lastrundate' = CONVERT(CHAR, Dateadd(millisecond, sjs.last_run_time,
                                                          CONVERT(DATETIME, Cast(
                                        NULLIF(sjs.last_run_date, 0)
                                        AS VARCHAR(10)))), 9),
