@@ -1,5 +1,6 @@
 body {
     font-family: "Lato", sans-serif;
+    background-color: RGB(243,243,243);
 }
 
 main {
@@ -175,7 +176,7 @@ main {
     /* align-items: center; */
     justify-content: space-between;
     padding: 20px;
-    background-color: rgba(126, 126, 126, 0.8);
+    background-color: rgba(255, 255, 255, 0.800);
     overflow: hidden;
 
 }
@@ -195,8 +196,10 @@ main {
     transition-duration: .3s;
 }
 
-.contact-text {
+.contact-text a {
     font-size: 1em;
+    color: #111111fa;
+    text-decoration: none;
 }
 
 .contact:hover .contact-text {
