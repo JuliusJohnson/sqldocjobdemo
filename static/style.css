@@ -30,7 +30,8 @@ main {
     /* overflow: hidden; */
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .sidenav a {
