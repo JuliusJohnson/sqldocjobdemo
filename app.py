@@ -30,7 +30,7 @@ def structureData():
         
     return jobs
 
-# pprint(getJobStepData('%').fetchall())
+pprint(structureData()['With_PowerShell'][0]['enabled'])
 
 # defining home page 
 @app.route(f'/') 
@@ -42,7 +42,7 @@ def homepage():
 
 @app.route('/jobs/<jobname>')
 def jobSteps(jobname):
-    return render_template("jobs.html", len = len(structureData()[jobname]), jobSteps = structureData()[jobname], getdate = today)
+    return render_template("jobs.html", len = len(structureData()[jobname]), jobSteps = structureData()[jobname], getdate = today, isEnabled = str(structureData()[jobname][0]['enabled']))
   
 # running app 
 app.run(use_reloader = True, debug = True) 

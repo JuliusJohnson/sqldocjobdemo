@@ -32,16 +32,22 @@
 
         <div class="job-tooltip">
             <span class="job-tooltiptext">{{jobSteps[i]['step_name']}}</span>
-            <a class="job-links2" href="#step{{jobSteps[i]['step_id']}}">Step {{jobSteps[i]['step_id']}}: {{jobSteps[i]['step_name']}} </a>
-            
-        </div> 
+            <a class="job-links2" href="#step{{jobSteps[i]['step_id']}}">Step {{jobSteps[i]['step_id']}}:
+                {{jobSteps[i]['step_name']}} </a>
+
+        </div>
         {%endfor%}
     </div>
     </div>
     <main>
         <div class="main">
             <h2>{{jobSteps[0]['JobName']}}</h2>
-            <p><em>Created: {{getdate}}</em></p>
+            <p><em><strong>{{getdate}}</strong></em></p>
+            {% if isEnabled == "1" %}
+            <p><em><strong>Enabled: Yes</strong></em></p>
+            {% else %}
+            <p><em>Enabled: No</em></p>
+            {% endif %}
 
             <!-- For loop logic of jinja template -->
             {%for i in range(0, len)%}
@@ -51,9 +57,10 @@
                     <tr>
                         <strong>Step {{jobSteps[i]['step_id']}}</strong>
 
-                        <tbody >
-                            <tr scope="row" >
-                                <th style="background-color: RGB(243, 243, 243);"><strong>{{jobSteps[i]['step_name']}}</strong> </th>
+                        <tbody>
+                            <tr scope="row">
+                                <th style="background-color: RGB(243, 243, 243);">
+                                    <strong>{{jobSteps[i]['step_name']}}</strong> </th>
                             </tr>
                             <tr>
                                 <th scope="row" style="background-color: RGB(243, 243, 243);">Type</th>
@@ -69,13 +76,14 @@
                             </tr>
                             <tr>
                                 <th scope="row" style="background-color: RGB(243, 243, 243);">On Failure</th>
-                                <td style="background-color: RGB(243, 243, 243);" colspan="2">{{jobSteps[i]['On_Failure']}}</td>
+                                <td style="background-color: RGB(243, 243, 243);" colspan="2">
+                                    {{jobSteps[i]['On_Failure']}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="background-color: RGB(243, 243, 243);">Last Run DateTime</th>
-                                <td style="background-color: RGB(243, 243, 243);" >{{jobSteps[i]['lastrundate']}}</td>
+                                <td style="background-color: RGB(243, 243, 243);">{{jobSteps[i]['lastrundate']}}</td>
                             </tr>
-                            
+
                         </tbody>
                 </table>
             </div>

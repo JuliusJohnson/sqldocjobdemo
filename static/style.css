@@ -9,6 +9,10 @@ main {
     margin-bottom: 5vh;
 }
 
+p {
+    margin-bottom: 8px;
+}
+
 .main {
     margin-left: 5vw;
     margin-right: 5vw;
