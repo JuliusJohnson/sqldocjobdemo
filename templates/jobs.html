@@ -65,7 +65,7 @@
                             </tr>
                             <tr>
                                 <th scope="row" style="background-color: RGB(243, 243, 243);">Last Run Outcome</th>
-                                <td style="background-color: RGB(243, 243, 243);">{{jobSteps[i]['last_run_outcome']}}
+                                <td style="background-color: RGB(243, 243, 243);">{% if jobSteps[i]['last_run_outcome'] == "1" %} Success {% else %} Not Sucessful {% endif %}
                                 </td>
                             </tr>
                             <tr>
