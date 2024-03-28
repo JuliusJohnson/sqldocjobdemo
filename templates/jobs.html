@@ -23,10 +23,11 @@
                         d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z">
                     </path>
                 </svg>
+                <div class=".home_text"><a class=".home_text" href='/'>Home</a></div>
         </a>
-        
+
     </div>
-    <div class=".home_text"><a class=".home_text" href='/'>Go Home</a></div>
+
     <div class="job-links">
         {%for i in range(0, len)%}
 
@@ -45,7 +46,7 @@
             {% if isEnabled == "1" %}
             <p><em><strong>Enabled: Yes</strong></em></p>
             {% else %}
-            <p><em style = color:red>Enabled: No</em></p>
+            <p><em style=color:red>Enabled: No</em></p>
             {% endif %}
 
             <!-- For loop logic of jinja template -->
@@ -59,15 +60,20 @@
                         <tbody>
                             <tr scope="row">
                                 <th style="background-color: RGB(243, 243, 243);">
-                                    <strong>Infomation</strong> </th>
+                                    <strong>Infomation</strong>
+                                </th>
                             </tr>
                             <tr>
                                 <th scope="row" style="background-color: RGB(243, 243, 243);">Last Run Outcome</th>
-                                <td style="background-color: RGB(243, 243, 243);">{{jobSteps[i]['last_run_outcome']}}</td>
+                                <td style="background-color: RGB(243, 243, 243);">{{jobSteps[i]['last_run_outcome']}}
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row" style="background-color: RGB(243, 243, 243);">Last Run DateTime (Duration (Hours:Minutes:Seconds))</th>
-                                <td style="background-color: RGB(243, 243, 243);">{{jobSteps[i]['lastrundate']}} ({{jobSteps[i]['Hours']}}:{{jobSteps[i]['Minutes']}}:{{jobSteps[i]['Seconds']}})</td>
+                                <th scope="row" style="background-color: RGB(243, 243, 243);">Last Run DateTime
+                                    (Duration (Hours:Minutes:Seconds))</th>
+                                <td style="background-color: RGB(243, 243, 243);">{{jobSteps[i]['lastrundate']}}
+                                    ({{jobSteps[i]['Hours']}}:{{jobSteps[i]['Minutes']}}:{{jobSteps[i]['Seconds']}})
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row" style="background-color: RGB(243, 243, 243);">Type</th>
@@ -86,7 +92,7 @@
                                 <td style="background-color: RGB(243, 243, 243);" colspan="2">
                                     {{jobSteps[i]['On_Failure']}}</td>
                             </tr>
-                            
+
 
                         </tbody>
                 </table>
