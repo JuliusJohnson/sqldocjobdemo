@@ -157,7 +157,8 @@ p {
 table {
     width: 5px;
     table-layout: auto;
-    /* width: 300px; */
+    border-bottom:  4px solid;
+        /* width: 300px; */
 }
 
 /* td {width: 80px;} */
